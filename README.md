@@ -8,12 +8,11 @@
 
 用常规的 macOS GUI Scripting 方法控制 Surge 有一个问题：
 
-Surge 菜单栏必须先手动点开才能获取及操纵其界面元素，而 AppleScript 的 `click` 却不能点开该菜单
+Surge 菜单栏必须先手动点开才能获取及操纵其界面元素，而 AppleScript 中 `click` 却不能点开该菜单
 
+因此需要借助第三方工具模拟鼠标点击动作，比如 [Keyboard Maestro](https://www.keyboardmaestro.com/main/)
 
-因此需要借助第三方工具来模拟点击鼠标，比如 [Keyboard Maestro](https://www.keyboardmaestro.com/main/)
-
-为了自适应屏幕，可以先获取菜单栏坐标，再进行模拟点击
+为了自适应屏幕，可以先获取菜单栏坐标，再模拟点击
 
 ```AppleScript
 tell application "System Events"
@@ -26,6 +25,8 @@ end tell
 ![获取工具栏坐标并点击](https://raw.githubusercontent.com/jayqizone/Surge-AppleScript/master/images/menubar.png)
 
 ## 2. macOS GUI Scripting
+
+### 2.1 一般情况
 
 然后就可以用通用编程方法了，如切换到指定节点
 
@@ -41,9 +42,9 @@ tell application "System Events"
 end tell
 ```
 
-### 例外：出站模式
+### 2.2 例外：出站模式
 
-「出站模式」子菜单项目仍然不能通过 `click` 点击。同样可以用之前的方法获取菜单项坐标，然后进行模拟点击
+「出站模式」子菜单项目仍然不能通过 `click` 点击。同样可以用之前的方法获取菜单项坐标，然后模拟点击
 
 ```AppleScript
 tell application "System Events"
