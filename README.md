@@ -5,6 +5,7 @@
 ## 1. 模拟点击 Surge 菜单栏图标
 
 用常规的 macOS GUI Scripting 方法控制 Surge 有一个问题：
+
 Surge 菜单栏必须先手动点开才能获取及操纵其界面元素，而 AppleScript 的 `click` 却不能点开该菜单
 
 因此需要借助第三方模拟鼠标点击工具，比如 [Keyboard Maestro](https://www.keyboardmaestro.com/main/)。为了自适应屏幕，可以先获取菜单栏坐标，再进行模拟点击
