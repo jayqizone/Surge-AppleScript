@@ -112,11 +112,10 @@ moveMouse(orig.x, orig.y);
 
 // 点击鼠标
 function clickMouse(x, y) {
-	moveMouse(x,y);
-	// 少许延迟
-	delay(0.1);
 	let event = $.CGEventCreateMouseEvent($(), $.kCGEventLeftMouseDown, $.CGPointMake(x, y), $.kCGMouseButtonLeft);
 	$.CGEventPost($.kCGHIDEventTap, event);
+	// 少许延迟
+	delay(0.1)
 	$.CGEventSetType(event, $.kCGEventLeftMouseUp);
 	$.CGEventPost($.kCGHIDEventTap, event);
 	$.CFRelease(event);
@@ -133,4 +132,3 @@ function moveMouse(x, y) {
 JXA 在 Shell 中的调用方式是 `osascript -l JavaScript xxx.js`；在 Keyboard Maestro 中是：
 
 ![JXA 联合 ObjC 框架](https://raw.githubusercontent.com/jayqizone/Surge-AppleScript/master/images/jxa.png)
-
