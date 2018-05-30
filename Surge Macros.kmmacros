@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>549345280.12611401</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>DisplayKind</key>
+						<string>None</string>
+						<key>IncludeStdErr</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>ExecuteAppleScript</string>
+						<key>NotifyOnFailure</key>
+						<false/>
+						<key>Path</key>
+						<string></string>
+						<key>StopOnFailure</key>
+						<false/>
+						<key>Text</key>
+						<string>tell application "System Events"
+	tell process "Surge"
+		tell menu bar item 1 of menu bar 2
+			perform action "AXShowMenu"
+			keystroke "d" using command down -- 模拟按下 ⌘+D，对应「控制台」功能
+		end tell
+	end tell
+end tell</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseText</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>545996359.06456494</real>
+				<key>ModificationDate</key>
+				<real>549345312.89310098</real>
+				<key>Name</key>
+				<string>Surge Hotkey</string>
+				<key>Triggers</key>
+				<array/>
+				<key>UID</key>
+				<string>61ADF223-EFD0-466B-8321-C1CF51D22D8C</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Surge</string>
+		<key>ToggleMacroUID</key>
+		<string>E3254D57-AE3C-447A-BFD2-0532964C31D4</string>
+		<key>UID</key>
+		<string>F2668141-8FA8-497A-B7F7-28F5E8ADAD69</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>549345280.12611401</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>DisplayKind</key>
+						<string>None</string>
+						<key>IncludeStdErr</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>ExecuteAppleScript</string>
+						<key>NotifyOnFailure</key>
+						<false/>
+						<key>Path</key>
+						<string></string>
+						<key>StopOnFailure</key>
+						<false/>
+						<key>Text</key>
+						<string>tell application "System Events"
+	tell process "Surge"
+		tell menu bar item 1 of menu bar 2
+			perform action "AXShowMenu"
+			tell menu item "策略组名称" of menu 1 to {click, click menu item "节点名称" of menu 1} -- 点选「某策略组 -&gt; 某节点」
+		end tell
+	end tell
+end tell</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseText</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>545996359.06456494</real>
+				<key>ModificationDate</key>
+				<real>549345314.61056399</real>
+				<key>Name</key>
+				<string>Surge Node</string>
+				<key>Triggers</key>
+				<array/>
+				<key>UID</key>
+				<string>AA060111-14A0-42DD-8C6E-186CACA3DFF4</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Surge</string>
+		<key>ToggleMacroUID</key>
+		<string>E3254D57-AE3C-447A-BFD2-0532964C31D4</string>
+		<key>UID</key>
+		<string>F2668141-8FA8-497A-B7F7-28F5E8ADAD69</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>549345280.12611401</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>MacroActionType</key>
+						<string>SetVariableToText</string>
+						<key>Text</key>
+						<string>%CurrentMouse%</string>
+						<key>Variable</key>
+						<string>Local OriginMouse</string>
+					</dict>
+					<dict>
+						<key>DisplayKind</key>
+						<string>Variable</string>
+						<key>IncludeStdErr</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>ExecuteAppleScript</string>
+						<key>NotifyOnFailure</key>
+						<false/>
+						<key>Path</key>
+						<string></string>
+						<key>StopOnFailure</key>
+						<false/>
+						<key>Text</key>
+						<string>tell application "System Events"
+	tell process "Surge"
+		tell menu bar item 1 of menu bar 2
+			perform action "AXShowMenu"
+			tell menu item 1 of menu 1 -- menu item 1 是菜单第一项，即「出站模式」
+				click
+				position of menu item 1 of menu 1 -- menu item 1 是子菜单第一项，即「直连」，因为分割线的缘故，「全局」和「规则」分别对应 menu item 3 和 5
+			end tell
+		end tell
+	end tell
+end tell</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseText</key>
+						<true/>
+						<key>Variable</key>
+						<string>Local Target</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>MoveAndClick</string>
+						<key>Button</key>
+						<integer>0</integer>
+						<key>ClickCount</key>
+						<integer>1</integer>
+						<key>DisplayMatches</key>
+						<false/>
+						<key>DragHorizontalPosition</key>
+						<string>0</string>
+						<key>DragVerticalPosition</key>
+						<string>0</string>
+						<key>Fuzz</key>
+						<integer>15</integer>
+						<key>HorizontalPositionExpression</key>
+						<string>Local Target.x</string>
+						<key>MacroActionType</key>
+						<string>MouseMoveAndClick</string>
+						<key>Modifiers</key>
+						<integer>0</integer>
+						<key>MouseDrag</key>
+						<string>None</string>
+						<key>Relative</key>
+						<string>Absolute</string>
+						<key>RelativeCorner</key>
+						<string>TopLeft</string>
+						<key>RestoreMouseLocation</key>
+						<false/>
+						<key>VerticalPositionExpression</key>
+						<string>Local Target.y</string>
+					</dict>
+					<dict>
+						<key>Action</key>
+						<string>SetMouse</string>
+						<key>MacroActionType</key>
+						<string>UseVariable</string>
+						<key>Variable</key>
+						<string>Local OriginMouse</string>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>545996359.06456494</real>
+				<key>ModificationDate</key>
+				<real>549345317.61569095</real>
+				<key>Name</key>
+				<string>Surge Outbound</string>
+				<key>Triggers</key>
+				<array/>
+				<key>UID</key>
+				<string>D9F69CB0-C2D5-4D93-9628-E11972D5C0E9</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Surge</string>
+		<key>ToggleMacroUID</key>
+		<string>E3254D57-AE3C-447A-BFD2-0532964C31D4</string>
+		<key>UID</key>
+		<string>F2668141-8FA8-497A-B7F7-28F5E8ADAD69</string>
+	</dict>
+	<dict>
+		<key>Activate</key>
+		<string>Normal</string>
+		<key>CreationDate</key>
+		<real>549345280.12611401</real>
+		<key>Macros</key>
+		<array>
+			<dict>
+				<key>Actions</key>
+				<array>
+					<dict>
+						<key>DisplayKind</key>
+						<string>None</string>
+						<key>IncludeStdErr</key>
+						<false/>
+						<key>MacroActionType</key>
+						<string>ExecuteJavaScriptForAutomation</string>
+						<key>NotifyOnFailure</key>
+						<false/>
+						<key>Path</key>
+						<string></string>
+						<key>StopOnFailure</key>
+						<false/>
+						<key>Text</key>
+						<string>// Objective-C Bridge
+ObjC.import('AppKit');
+
+// 获取鼠标原始坐标
+var event = $.CGEventCreate($());
+var orig = $.CGEventGetLocation(event);
+$.CFRelease(event);
+
+// 展开菜单。注意：JavaScript 中下标从 0 开始
+var menu = Application('System Events').processes.Surge.menuBars[1].menuBarItems[0];
+menu.actions.AXShowMenu.perform();
+// 获取目标菜单项的坐标并点击。注意：最后一个 menuItems 的索引应为 0、2、4，对应「直连」、「全局」、「规则」
+clickMouse(...menu.menus[0].menuItems[0].click().menus[0].menuItems[4].position());
+
+// 恢复鼠标原始坐标
+moveMouse(orig.x, orig.y);
+
+
+// 点击鼠标
+function clickMouse(x, y) {
+	moveMouse(x,y);
+	// 少许延迟
+	delay(0.1);
+	let event = $.CGEventCreateMouseEvent($(), $.kCGEventLeftMouseDown, $.CGPointMake(x, y), $.kCGMouseButtonLeft);
+	$.CGEventPost($.kCGHIDEventTap, event);
+	$.CGEventSetType(event, $.kCGEventLeftMouseUp);
+	$.CGEventPost($.kCGHIDEventTap, event);
+	$.CFRelease(event);
+}
+
+// 移动鼠标
+function moveMouse(x, y) {
+	let event = $.CGEventCreateMouseEvent($(), $.kCGEventMouseMoved, $.CGPointMake(x, y), $.kCGMouseButtonLeft);
+	$.CGEventPost($.kCGHIDEventTap, event);
+	$.CFRelease(event);
+}</string>
+						<key>TimeOutAbortsMacro</key>
+						<true/>
+						<key>TrimResults</key>
+						<true/>
+						<key>TrimResultsNew</key>
+						<true/>
+						<key>UseText</key>
+						<true/>
+					</dict>
+				</array>
+				<key>CreationDate</key>
+				<real>545996359.06456494</real>
+				<key>ModificationDate</key>
+				<real>549345319.34371901</real>
+				<key>Name</key>
+				<string>Surge Outbound JXA</string>
+				<key>Triggers</key>
+				<array/>
+				<key>UID</key>
+				<string>E16BD315-B83D-4910-A2D6-25BC740F869D</string>
+			</dict>
+		</array>
+		<key>Name</key>
+		<string>Surge</string>
+		<key>ToggleMacroUID</key>
+		<string>E3254D57-AE3C-447A-BFD2-0532964C31D4</string>
+		<key>UID</key>
+		<string>F2668141-8FA8-497A-B7F7-28F5E8ADAD69</string>
+	</dict>
+</array>
+</plist>
